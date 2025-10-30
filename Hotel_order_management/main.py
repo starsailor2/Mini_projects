@@ -1,4 +1,3 @@
-
 menu = {
     'pizza': 400,
     'burger': 89,
@@ -29,6 +28,9 @@ while True:
         order.append((item, quant))
         order_total_cost += menu[item] * quant
         print(f"Your item {item} has been added to order")
+
+    else:
+        print("Item not found in menu. Please choose a valid item.")    
 
     another_order = input("Do you want to order more items? (yes/no) = ")
     if another_order == 'no':
