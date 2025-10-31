@@ -13,7 +13,7 @@ Small-scale Python applications demonstrating core concepts:
 
 ### API Projects
 Projects focused on API development and integration:
-- RESTful API implementations
+- FastAPI implementations
 - Third-party API integrations
 - Microservices
 - API authentication examples
