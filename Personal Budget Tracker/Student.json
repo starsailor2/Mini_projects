@@ -1,5 +1,11 @@
 {
-    "income": [],
+    "income": [
+        {
+            "amount": 5000.0,
+            "type": "salary",
+            "timestamp": 1762258394.4865723
+        }
+    ],
     "expense": [
         {
             "amount": 2500.0,
