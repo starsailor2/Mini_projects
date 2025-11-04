@@ -2,7 +2,7 @@ import os
 import json
 import time
 
-JSON_FILE = os.path.join(os.path.dirname(__file__), 'Student.json')
+JSON_FILE = os.path.join(os.path.dirname(__file__), 'transactions.json')
 
 def load_expense():
     global expense
