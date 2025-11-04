@@ -82,7 +82,7 @@ All data is stored in `Student.json` in the same directory as the script. The fi
 Personal Budget Tracker/
 │
 ├── main.py          # Main application file
-├── Student.json     # Data storage (auto-generated)
+├── transactions.json     # Data storage (auto-generated)
 └── README.md        # This file
 ```
 
