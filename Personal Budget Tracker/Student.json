@@ -1,0 +1,10 @@
+{
+    "income": [],
+    "expense": [
+        {
+            "amount": 2500.0,
+            "category": "food",
+            "timestamp": 1762258018.942565
+        }
+    ]
+}
