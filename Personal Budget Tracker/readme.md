@@ -1,115 +1,113 @@
-# 💰 Personal Budget Tracker
+# Personal Budget Tracker
 
-A simple command-line tool to help you log income and expenses, view spending summaries by category, and track your overall financial balance. Built with Python using basic data structures and modules for persistence and timestamping.
+A simple command-line application to track your personal income and expenses. This Python-based budget tracker helps you monitor your financial transactions and view your portfolio balance.
 
----
+## Features
 
-## 🚀 Features
+- 📊 **View Portfolio**: Display all income and expenses with totals and net balance
+- 💰 **Add Income**: Record income with amount, type, and timestamp
+- 💸 **Add Expense**: Record expenses with amount, category, and timestamp
+- 💾 **Data Persistence**: All data is saved to a JSON file for future sessions
+- ⏰ **Timestamps**: Each transaction is recorded with time (HH:MM:SS format)
 
-- Add income and expense transactions
-- View total balance and category-wise expense summary
-- Save and load transactions from a JSON file
-- Timestamp each transaction automatically
-- Input validation for safe and clean data entry
+## Requirements
 
----
+- Python 3.6 or higher
+- No external libraries required (uses built-in modules)
 
-## 🧱 How It Works
+## Installation
 
-### Data Structure
-- Transactions are stored as a list of dictionaries:
-  ```python
-  transactions = [
-      {
-          "type": "expense",
-          "amount": 50.0,
-          "category": "Food",
-          "note": "Lunch",
-          "date": "2025-11-04T08:30:00"
-      },
-      ...
-  ]
-  ```
+1. Clone or download this repository
+2. Navigate to the project directory:
+   ```bash
+   cd "Personal Budget Tracker"
+   ```
 
-- Summary is computed as a dictionary:
-  ```python
-  summary = {
-      "Food": 120.0,
-      "Transport": 45.0
-  }
-  ```
+## Usage
 
----
-
-## 📦 Requirements
-- Python 3.7+
-- No external libraries required
-
----
-
-## 🛠️ Usage
-- Clone or download the repository.
-- Run the script:
-  ```bash
-  python budget_tracker.py
-  ```
-- Use the menu to:
-  - Add Expense
-  - Add Income
-  - View Summary
-  - Quit (saves data to transactions.json)
-
----
-
-## 📂 File Structure
-```
-budget_tracker/
-├── Personal budget_tracker.py
-├── transactions.json  # auto-generated
-└── README.md
+Run the application:
+```bash
+python main.py
 ```
 
----
+### Menu Options
 
-## 🧪 Example Flow
+1. **View Portfolio** - Shows all your income and expenses with totals
+2. **Add Expense** - Add a new expense entry
+3. **Add Income** - Add a new income entry
+4. **Exit** - Quit the application
+
+### Example Usage
+
 ```
-Welcome to Personal Budget Tracker!
+Welcome to the Personal Budget Tracker!
+1. View Portfolio
+2. Add Expense
+3. Add Income
+4. Exit
+Please enter your choice (1-4): 3
 
-1. Add Expense
-2. Add Income
-3. View Summary
-4. Quit
-
-Choose an option: 1
-Enter amount: 50
-Enter category: Food
-Enter note (optional): Lunch
-Expense added!
-
-Choose an option: 3
-Balance: ₹-50.00
-Spending by category:
-- Food: ₹50.00
+Enter income amount: 5000
+Enter income type (e.g., Salary, Gift): Salary
+Income added...
 ```
 
----
+## Data Storage
 
-## 🧠 Core Concepts Used
-- Lists and dictionaries for data modeling
-- Loops for aggregation
-- try...except for input validation
-- json for saving/loading data
-- datetime for timestamps
+All data is stored in `Student.json` in the same directory as the script. The file is automatically created on first run.
 
----
+### JSON Structure
+```json
+{
+    "income": [
+        {
+            "amount": 5000.0,
+            "type": "Salary",
+            "timestamp": "14:30:45"
+        }
+    ],
+    "expense": [
+        {
+            "amount": 150.0,
+            "category": "Food",
+            "timestamp": "15:20:10"
+        }
+    ]
+}
+```
 
-## 📈 Future Enhancements
-- Edit or delete transactions
-- Export summary to CSV
-- Monthly budget alerts
-- Graphical interface or web dashboard
+## Project Structure
 
----
+```
+Personal Budget Tracker/
+│
+├── main.py          # Main application file
+├── Student.json     # Data storage (auto-generated)
+└── README.md        # This file
+```
 
-## 👨‍💻 Author
-Built by Rishav — passionate about practical AI/ML projects and productivity tools!
+## Functions Overview
+
+- `load_income()` - Loads income data from JSON file
+- `load_expense()` - Loads expense data from JSON file
+- `update_income()` - Saves income data to JSON file
+- `update_expense()` - Saves expense data to JSON file
+- `add_income()` - Prompts user to add new income entry
+- `add_expense()` - Prompts user to add new expense entry
+- `view_portfolio()` - Displays complete financial summary
+- `menu()` - Displays main menu options
+- `main()` - Main program loop
+
+## Error Handling
+
+- Invalid amount inputs are caught and user is prompted again
+- Missing JSON file is automatically created
+- Empty or corrupted data gracefully handled with default values
+
+## License
+
+This project is open source and available for personal and educational use.
+
+## Author
+
+Created as a mini project for learning Python file handling and JSON operations.

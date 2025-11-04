@@ -67,6 +67,7 @@ def view_portfolio():
     print(f"Total Expenses: ${total_expense:.2f}")
     print(f"Net Income: ${total_income - total_expense:.2f}")
 
+
 def add_expense():
     while True:
         try:
@@ -76,7 +77,8 @@ def add_expense():
             print("Invalid amount. Please enter a number.")
 
     category = input("Enter expense category (e.g., Food, Transport): ")
-    expense.append({"amount": amount, "category": category, "timestamp": time.time()})
+    formatted_time = time.strftime('%H:%M:%S', time.localtime(time.time()))
+    expense.append({"amount": amount, "category": category, "timestamp": formatted_time})
     update_expense()
     print("Expense added...")
 
@@ -89,7 +91,8 @@ def add_income():
             print("Invalid amount. Please enter a number.")
 
     income_type = input("Enter income type (e.g., Salary, Gift): ")
-    income.append({"amount": amount, "type": income_type, "timestamp": time.time()})
+    formatted_time = time.strftime('%H:%M:%S', time.localtime(time.time()))
+    income.append({"amount": amount, "type": income_type, "timestamp": formatted_time})
     update_income()
     print("Income added...")
 
