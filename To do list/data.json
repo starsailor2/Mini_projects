@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "coding",
+        "description": "2 hr practice",
+        "status": "Completed",
+        "created_at": "2025-11-05 16:51",
+        "updated_at": "2025-11-05 16:51"
+    },
+    {
+        "id": 2,
+        "title": "complete the assignment",
+        "description": "Physics 2 chapter assignment",
+        "status": "Pending",
+        "created_at": "2025-11-05 16:52",
+        "updated_at": "2025-11-05 16:52"
+    }
+]
