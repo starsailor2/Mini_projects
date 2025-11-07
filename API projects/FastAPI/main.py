@@ -1,4 +1,4 @@
-from fastapi import FastAPI  # type: ignore #core framework
+from fastapi import FastAPI  # type: ignore #core 
 from pydantic import BaseModel #define guildelines for syntax
 from typing import List
 
