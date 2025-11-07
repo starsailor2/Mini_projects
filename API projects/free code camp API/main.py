@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+#defining schema using pydantic
 class Post(BaseModel):
     title: str
     content: str
