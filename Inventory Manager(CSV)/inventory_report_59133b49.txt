@@ -1,0 +1,36 @@
+==================================================
+         INVENTORY REPORT
+==================================================
+
+Total Products: 4
+Total Inventory Value: Rs.1950.00
+Total Quantity: 35 units
+Average Product Price: Rs.88.75
+
+==================================================
+ALL PRODUCTS:
+==================================================
+
+ID: 6f7b5e4e
+Name: paste
+Price: Rs.15
+Quantity: 10
+------------------------------
+
+ID: 1fdb661d
+Name: soap
+Price: Rs.180
+Quantity: 5
+------------------------------
+
+ID: 1c0ade50
+Name: cream
+Price: Rs.150
+Quantity: 5
+------------------------------
+
+ID: 6257f2b5
+Name: maggi
+Price: Rs.10
+Quantity: 15
+------------------------------
