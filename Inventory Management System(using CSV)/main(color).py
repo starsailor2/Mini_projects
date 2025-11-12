@@ -1,4 +1,4 @@
-from colorama import Fore, Back, Style, init
+from colorama import Fore, Style, init
 import tabulate # for interactive table display
 import os
 import csv # for reading and writing csv file
