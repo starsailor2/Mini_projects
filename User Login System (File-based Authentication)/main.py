@@ -1,6 +1,7 @@
 import json
 import hashlib
 import os
+import pwinput
 
 USER_FILE =  os.path.join(os.path.dirname(__file__), 'users.json')
 
@@ -24,18 +25,19 @@ def save_user(users):
 def singup():
     users = load_user()
 
+    print("Please Enter your credential for SIGNUP")
     username = input("Enter your Username: ")
     email = input("Your EMAIL: ")
-    password = input("Your Password: ")
-    secure_ques = input("Please write your security question (incase of reseting/updating the password): ")
-    secure_ans = input("Please write your answer here(make it tricky): ")
 
-    # check for user if it exists
-
+    # checking condition for user already exist or not
     for u in users:
-        if u["username"] == username or u["email"] == email:
+        if u["username"] == username and u["email"] == email:
             print("User already exists , please Login!")
             return
+    
+    password = pwinput.pwinput(prompt='Your Password: ',mask='*')
+    secure_ques = input("Please write your security question (incase of reseting/updating the password): ")
+    secure_ans = pwinput.pwinput(prompt='Please write your answer here(make it tricky): ',mask='*')
         
     users.append({
         "username":username,
@@ -53,11 +55,12 @@ def login():
 
     users = load_user()
 
+    print("Plese Enter your credential for LOGIN")
     username = input("Please Enter your username: ")
-    password = input("Please Enter your password: ")
+    password = pwinput.pwinput(prompt='Please Enter your password: ',mask='*')
 
     for u in users:
-        if u["username"] == username or u["password"] == hash_pass(password):
+        if u["username"] == username and u["password"] == hash_pass(password):
             print(f"Welcome Back, {username}")
             return True
         
@@ -67,18 +70,18 @@ def login():
 def reset_pass():
     users = load_user()
 
-    username = input("Enter your username: ")
+    username = input("Enter your username to RESET password: ")
 
     for u in users:
         if u["username"] == username:
             print(f"Please give the answer for following question\n")
             print("-" * 30)
             print(u["secure_ques"])
-            ans = input("Please input answer: ")
+            ans = pwinput.pwinput(prompt='Please input answer: ',mask='*')
 
             if hash_pass(ans.lower()) == u["secure_ans"]:
                 print("You have been verified!!!")
-                new_pass = input("Enter your new password: ")
+                new_pass = pwinput.pwinput(prompt='Enter your new password: ',mask='*')
 
                 u["password"] = hash_pass(new_pass) # update the new hashed password
                 save_user(users)
@@ -96,7 +99,7 @@ def reset_pass():
 def menu():
 
     while True:
-        print("=" * 30)
+        print("=" * 25)
 
         print("What do you wanna do ?")
         print("1 for signup")
@@ -104,7 +107,7 @@ def menu():
         print("3 for reset your password")
         print("4 for Exit")
 
-        print("=" * 30)
+        print("=" * 25)
         
         a = input("Enter your choice:- ")
 

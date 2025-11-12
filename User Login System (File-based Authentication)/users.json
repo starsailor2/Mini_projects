@@ -12,5 +12,12 @@
         "password": "237320d509717dc3f0d6bdcd5e8dc8f88f8fd94b06c728c1aaf94118ed34af38",
         "secure_ques": "merry",
         "secure_ans": "e718b2dd3e0ac1f9208efdffe98024e7406e29c51c31bcfa9a6b29d1951b19f4"
+    },
+    {
+        "username": "hoverman",
+        "email": "hvman.304@gmail.com",
+        "password": "81702dd2dead6ca11c202e5cb87babc2cee73ee2eb3811c5e6b9cdd6e37773bb",
+        "secure_ques": "michale",
+        "secure_ans": "dc355ec75a2dc4a1d29582933b52f9f2ed71061432d72e1991d8b15445b2ff03"
     }
 ]
